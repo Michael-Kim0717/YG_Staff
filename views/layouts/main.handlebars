@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge; ie=9; ie=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {{!-- Firebase --}}
+        <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyA78aFMqSTt4MBNQuR5s3ERevKnGA4VJtY",
+                authDomain: "byg-application.firebaseapp.com",
+                databaseURL: "https://byg-application.firebaseio.com",
+                projectId: "byg-application",
+                storageBucket: "byg-application.appspot.com",
+                messagingSenderId: "703932281959"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
+
+        {{!-- Materialize and Font Awesome --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        {{!-- jQuery --}}
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        {{!-- Title --}}
+        <title> BYG Staff </title>
+    </head>
+    <body>
+        <main>
+            {{>navbar}}
+            <div class="container">
+              {{{body}}}
+            </div>
+        </main>
+    </body>
+
+</html>
