@@ -1,43 +1,63 @@
 <body>
 
-    <button class='btn'> Add Student </button>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a class="active" href="#directory"> Directory </a></li>
+                <li class="tab col s6"><a class="active" href="#birthdays"> Birthdays </a></li>
+            </ul>
+        </div>
+        <div id="directory" class="col s12">
 
-    <!-- Dropdown Trigger -->
-    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+            <button class='btn' id='addStudent'> Add Student </button>
 
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider" tabindex="-1"></li>
-        <li><a href="#!">three</a></li>
-        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-    </ul>   
+            <a class='sort-trigger btn' href='#' data-target='sortList' id='sortDD'> Sort By </a>
 
-    <table>
+            <ul id='sortList' class='dropdown-content'>
+                <li> <a href="#!"> 6B </a></li>
+                <li> <a href="#!"> 6G </a></li>
+                <li> <a href="#!"> 7B </a></li>
+                <li> <a href="#!"> 7G </a></li>
+                <li> <a href="#!"> 8B </a></li>
+                <li> <a href="#!"> 8G </a></li>
+                <li> <a href="#!"> 9B </a></li>
+                <li> <a href="#!"> 9G </a></li>
+                <li> <a href="#!"> 10B </a></li>
+                <li> <a href="#!"> 10G </a></li>
+                <li> <a href="#!"> 11B </a></li>
+                <li> <a href="#!"> 11G </a></li>
+                <li> <a href="#!"> 12B </a></li>
+                <li> <a href="#!"> 12G </a></li>
+            </ul>
 
-        <thead>
-            <th> Name </th>
-            <th> Grade </th>
-            <th> Birthday </th>
-            <th> Phone Number </th>
-            <th> Address </th>
-            <th> Email Address </th>
-            <th> Guardian 1's Name </th>
-            <th> Guardian 1's Email </th>
-            <th> Guardian 1's Phone Number </th>
-            <th> Guardian 2's Name </th>
-            <th> Guardian 2's Email </th>
-            <th> Guardian 2's Phone Number </th>
-        </thead>
+            <table>
+                <thead>
+                    <th> Name </th>
+                    <th> Grade </th>
+                    <th> Birthday </th>
+                    <th> Location </th>
+                </thead>
+            </table>
 
-    </table>
+        </div>
+        <div id="birthdays" class="col s12">
+            
+            <div id="monthLine">
+                <p id="lastMonth" class="monthNav"> < </p>
+                <p id="currMonth"> CURRENT MONTH </p>
+                <p id="nextMonth" class="monthNav"> > </p>
+            </div>
+
+            <table> 
+                <thead>
+                    <th> Name </th>
+                    <th> Grade </th>
+                    <th> Birthday </th>
+                    <th> Location </th>
+                </thead>
+            </table>
+
+        </div>
+    </div>
 
 </body>
-
-<script>
-
-    $('.dropdown-trigger').dropdown();
-
-</script>

@@ -1,0 +1,40 @@
+/* General */
+.row {
+    padding-top: 50px;   
+}
+
+th {
+    text-align: center;
+}
+
+/* Directory */
+#addStudent {
+    display: block;
+    margin: 20px auto;
+}
+
+#sortDD {
+    float: right;
+    margin: 5px;
+}
+
+/* Birthdays */
+#monthLine {
+    padding: 30px;
+    text-align: center;
+}
+
+#monthLine p {
+    display: inline;
+}
+
+.monthNav {
+    font-size: 3em;
+    font-weight: 800;
+    padding: 0px 20px;
+}
+
+#currMonth {
+    font-size: 2em;
+    font-weight: 500;
+}
