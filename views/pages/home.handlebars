@@ -9,27 +9,51 @@
         </div>
         <div id="directory" class="col s12">
 
-            <button class='btn' id='addStudent'> Add Student </button>
+            <button class='btn modal-trigger' data-target='addStudentModal' id='addStudent'> Add Student </button>
 
+            {{!-- Add Student Modal Details --}}
+            <div id="addStudentModal" class="modal">
+                <div class="modal-content">
+                    <h4> Add a Student </h4>
+                    
+                    <h5 class="aSDetails"> Name </h5>
+                    <input style="margin-left: 30px; width: 80%;" id="aSName">
+
+                    <h5 class="aSDetails"> Grade </h5>
+                    <input style="margin-left: 30px; width: 80%;" id="aSGrade">
+
+                    <h5 class="aSDetails"> Birthday </h5>
+                    <input style="margin-left: 30px; width: 80%;" id="aSBirthday">
+
+                    <h5 class="aSDetails"> Location </h5>
+                    <input style="margin-left: 30px; width: 80%;" id="aSLocation">
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+                    
             <a class='sort-trigger btn' href='#' data-target='sortList' id='sortDD'> Sort By </a>
 
+            {{!-- Sort By Dropdown Menu Details --}}
             <ul id='sortList' class='dropdown-content'>
-                <li> <a href="#!"> 6B </a></li>
-                <li> <a href="#!"> 6G </a></li>
-                <li> <a href="#!"> 7B </a></li>
-                <li> <a href="#!"> 7G </a></li>
-                <li> <a href="#!"> 8B </a></li>
-                <li> <a href="#!"> 8G </a></li>
-                <li> <a href="#!"> 9B </a></li>
-                <li> <a href="#!"> 9G </a></li>
-                <li> <a href="#!"> 10B </a></li>
-                <li> <a href="#!"> 10G </a></li>
-                <li> <a href="#!"> 11B </a></li>
-                <li> <a href="#!"> 11G </a></li>
-                <li> <a href="#!"> 12B </a></li>
-                <li> <a href="#!"> 12G </a></li>
+                <li> <a href="#!"> 6B </a> </li>
+                <li> <a href="#!"> 6G </a> </li>
+                <li> <a href="#!"> 7B </a> </li>
+                <li> <a href="#!"> 7G </a> </li>
+                <li> <a href="#!"> 8B </a> </li>
+                <li> <a href="#!"> 8G </a> </li>
+                <li> <a href="#!"> 9B </a> </li>
+                <li> <a href="#!"> 9G </a> </li>
+                <li> <a href="#!"> 10B </a> </li>
+                <li> <a href="#!"> 10G </a> </li>
+                <li> <a href="#!"> 11B </a> </li>
+                <li> <a href="#!"> 11G </a> </li>
+                <li> <a href="#!"> 12B </a> </li>
+                <li> <a href="#!"> 12G </a> </li>
             </ul>
 
+            {{!-- Table Details for Students in Directory --}}
             <table>
                 <thead>
                     <th> Name </th>

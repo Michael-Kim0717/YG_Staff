@@ -25,10 +25,13 @@
             }
             $("#currMonth").text(convertMonth(finalMonthValue));
         });
-    });
-
+        
     /* Allows the sorting dropdown menu to be triggerable. */
-    $('.sort-trigger').dropdown();
+        $('.sort-trigger').dropdown();
+
+    /* Add Student Modal trigger */
+        $('.modal').modal();
+    });
 
     /* Gets the current month and converts it into a string. */
     function convertMonth(monthValue) {

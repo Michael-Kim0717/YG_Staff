@@ -1,21 +1,35 @@
 /* General */
 .row {
-    padding-top: 50px;   
+    padding-top: 100px;   
 }
 
 th {
     text-align: center;
 }
 
+/* Home */
+#firebaseui-auth-container {
+    margin: 50px;
+}
+
 /* Directory */
 #addStudent {
     display: block;
-    margin: 20px auto;
+    margin: 50px auto;
+}
+
+.aSInput {
+    padding-left: 30px;
+    width: 80%;
+}
+
+.aSDetails {
+    margin: 30px;
 }
 
 #sortDD {
     float: right;
-    margin: 5px;
+    margin: 15px;
 }
 
 /* Birthdays */
