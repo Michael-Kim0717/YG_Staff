@@ -27,9 +27,19 @@ th {
     margin: 30px;
 }
 
+.dropdownGrade {
+    text-align: center;
+}
+
 #sortDD {
     float: right;
     margin: 15px;
+    width: 90px;
+}
+
+.preloader-wrapper {
+    display: block;
+    margin: 100px auto;
 }
 
 /* Birthdays */

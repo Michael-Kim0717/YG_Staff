@@ -4,6 +4,14 @@
     $(document).ready(function(){
         $('.tabs').tabs();
 
+
+    /* ------------------- JAVASCRIPT FOR DIRECTORY TAB ------------------- */
+        $(".dropdownGrade").on("click", function(){
+            $("#sortDD").text($(this).attr("data-grade"));
+        });
+
+    /* ------------------- JAVASCRIPT FOR BIRTHDAYS TAB ------------------- */
+
     /* Get current month and display it within the birthdays tab */
         var currDate = (new Date).getMonth();
         $("#currMonth").text(convertMonth(currDate));
