@@ -6,9 +6,63 @@
 
 
     /* ------------------- JAVASCRIPT FOR DIRECTORY TAB ------------------- */
+        $('.datepicker').datepicker();
+
         $(".dropdownGrade").on("click", function(){
             $("#sortDD").text($(this).attr("data-grade"));
         });
+
+        $(".aSGradeV").on("click", function(){
+            console.log($(this).attr("data-grade"));
+            $("#aSGrade").val($(this).attr("data-grade"));
+        });
+
+        $('input.autocomplete').autocomplete({
+            data: {
+                /* Add More Values Based On What Was Entered Previously */
+                "Hackensack, NJ" : null,
+                "Teaneck, NJ" : null,
+                "Fort Lee, NJ" : null,
+                "Fair Lawn, NJ" : null,
+                "Garfield, NJ" : null,
+                "Englewood, NJ" : null,
+                "Bergenfield, NJ" : null,
+                "Paramus, NJ" : null,
+                "Mahwah, NJ" : null,
+                "Ridgewood, NJ" : null,
+                "Lodi, NJ" : null,
+                "Cliffside Park, NJ" : null,
+                "Lyndhurst, NJ" : null,
+                "Palisades Park, NJ" : null,
+                "Elmwood Park, NJ" : null,
+                "Rutherford, NJ" : null,
+                "Dumont, NJ" : null,
+                "Wyckoff, NJ" : null,
+                "New Milford, NJ" : null,
+                "North Arlington, NJ" : null,
+                "Tenafly, NJ" : null,
+                "Ramsey, NJ" : null,
+                "Fairview, NJ" : null,
+                "Saddle Brook, NJ" : null,
+                "Oakland, NJ" : null,
+                "Ridgefield Park, NJ" : null,
+                "Hasbrouck Heights, NJ" : null,
+                "Glen Rock, NJ" : null,
+                "Edgewater, NJ" : null,
+                "Wayne, NJ" : null
+            }
+        });
+
+        $("#addStudentButton").on("click", function(){
+            $("#aSName").val("");
+            $("#aSGrade").val("");
+            $("#aSBirthday").val("");
+            $("#aSLocation").val("");
+        });
+
+        /* Allows the dropdown menus to be triggerable. */
+        $('.sort-trigger').dropdown();
+        $('.gradepicker').dropdown();
 
     /* ------------------- JAVASCRIPT FOR BIRTHDAYS TAB ------------------- */
 
@@ -33,9 +87,6 @@
             }
             $("#currMonth").text(convertMonth(finalMonthValue));
         });
-        
-    /* Allows the sorting dropdown menu to be triggerable. */
-        $('.sort-trigger').dropdown();
 
     /* Add Student Modal trigger */
         $('.modal').modal();

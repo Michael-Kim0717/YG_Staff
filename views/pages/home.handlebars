@@ -13,23 +13,32 @@
 
             {{!-- Add Student Modal Details --}}
             <div id="addStudentModal" class="modal">
-                <div class="modal-content">
-                    <h4> Add a Student </h4>
+                <div class="modal-content row">
+                    <h4 class="center"> Add a Student </h4>
                     
-                    <h5 class="aSDetails"> Name </h5>
-                    <input style="margin-left: 30px; width: 80%;" id="aSName">
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" id="aSName">
+                        <label for="aSName"> Name </label>
+                    </div>
 
-                    <h5 class="aSDetails"> Grade </h5>
-                    <input style="margin-left: 30px; width: 80%;" id="aSGrade">
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" class='gradepicker' data-target='aSGradePicker' id='aSGrade'>
+                        <label for="aSGrade"> Grade </label>
+                    </div>
 
-                    <h5 class="aSDetails"> Birthday </h5>
-                    <input style="margin-left: 30px; width: 80%;" id="aSBirthday">
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" class="datepicker" id="aSBirthday">
+                        <label for="aSBirthday"> Birthday </label>
+                    </div>
 
-                    <h5 class="aSDetails"> Location </h5>
-                    <input style="margin-left: 30px; width: 80%;" id="aSLocation">
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" class="autocomplete" id="aSLocation">
+                        <label for="aSLocation"> Location </label>
+                    </div>
+
+                    <div class="col s6 offset-s3">
+                        <button class="btn" id="addStudentButton"> Add Student </button>
+                    </div>
                 </div>
             </div>
                     
@@ -53,6 +62,23 @@
                 <li> <a href="#!" class='dropdownGrade' data-grade='12G'> 12G </a> </li>
             </ul>
 
+            <ul id='aSGradePicker' class='dropdown-content'>
+                <li> <a href="#!" class='aSGradeV' data-grade='6B'> 6B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='6G'> 6G </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='7B'> 7B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='7G'> 7G </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='8B'> 8B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='8G'> 8G </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='9B'> 9B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='9G'> 9G </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='10B'> 10B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='10G'> 10G </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='11B'> 11B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='11G'> 11G </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='12B'> 12B </a> </li>
+                <li> <a href="#!" class='aSGradeV' data-grade='12G'> 12G </a> </li>
+            </ul>
+
             {{!-- Table Details for Students in Directory --}}
             <table>
                 <thead>
@@ -62,7 +88,7 @@
                     <th> Location </th>
                 </thead>
             </table>
-            <div class="preloader-wrapper center big active">
+            <div class="preloader-wrapper big active">
                 <div class="spinner-layer spinner-blue-only">
                     <div class="circle-clipper left">
                         <div class="circle"></div>

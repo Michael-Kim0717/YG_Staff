@@ -13,34 +13,38 @@ th {
 }
 
 /* Directory */
-#addStudent {
-    display: block;
-    margin: 50px auto;
-}
 
-.aSInput {
-    padding-left: 30px;
-    width: 80%;
-}
+    /* Add Student Modal */
+    #addStudent {
+        display: block;
+        margin: 50px auto;
+    }
 
-.aSDetails {
-    margin: 30px;
-}
+    #addStudentButton {
+        display: block;
+        margin: 20px auto;
+    }
 
-.dropdownGrade {
-    text-align: center;
-}
+    .modal-content input {
+        margin-right: 30px;
+    }
 
-#sortDD {
-    float: right;
-    margin: 15px;
-    width: 90px;
-}
+    /* Dropdown Menu */
+    .dropdownGrade {
+        text-align: center;
+    }
 
-.preloader-wrapper {
-    display: block;
-    margin: 100px auto;
-}
+    #sortDD {
+        float: right;
+        margin: 15px;
+        width: 90px;
+    }
+
+    /* Table Details */
+    .preloader-wrapper {
+        display: block;
+        margin: 100px auto;
+    }
 
 /* Birthdays */
 #monthLine {
