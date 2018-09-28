@@ -4,12 +4,46 @@
     $(document).ready(function(){
         $('.tabs').tabs();
 
+    /* Populating all the data within the directory and birthdays */
+        $.getJSON('/directory', function(data) {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                $("#studentTable").append(
+                    "<tr>" +
+                        "<td>" + data[i].name + "</td>" + 
+                        "<td>" + data[i].grade + "</td>" +
+                        "<td>" + data[i].birthday + "</td>" +
+                        "<td>" + data[i].location + "</td>" +
+                    "</tr>"
+                );
+            }
+            $(".preloader-wrapper").css("visibility", "hidden");
+        });
 
     /* ------------------- JAVASCRIPT FOR DIRECTORY TAB ------------------- */
         $('.datepicker').datepicker();
 
         $(".dropdownGrade").on("click", function(){
-            $("#sortDD").text($(this).attr("data-grade"));
+            const selectedGrade = $(this).attr("data-grade");
+
+            $("#sortDD").text(selectedGrade);
+
+            $("#studentTable").empty();
+
+            $.getJSON('/directory/' + selectedGrade, function(data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $("#studentTable").append(
+                        "<tr>" +
+                            "<td>" + data[i].name + "</td>" + 
+                            "<td>" + data[i].grade + "</td>" +
+                            "<td>" + data[i].birthday + "</td>" +
+                            "<td>" + data[i].location + "</td>" +
+                        "</tr>"
+                    );
+                }
+                $(".preloader-wrapper").css("visibility", "hidden");
+            });
         });
 
         $(".aSGradeV").on("click", function(){
@@ -53,11 +87,45 @@
             }
         });
 
-        $("#addStudentButton").on("click", function(){
+        $("#addStudentButton").on("click", function(event){
+            event.preventDefault();
+
+            const name = $("#aSName").val().trim()
+            const grade = $("#aSGrade").val().trim()
+            const birthday = $("#aSBirthday").val().trim()
+            const location = $("#aSLocation").val().trim()
+
+            $.ajax({
+                method: "POST",
+                url: "/all/students",
+                data: {
+                    name: name,
+                    grade: grade,
+                    birthday: birthday,
+                    location: location
+                }
+            });
+
             $("#aSName").val("");
             $("#aSGrade").val("");
             $("#aSBirthday").val("");
             $("#aSLocation").val("");
+
+            $("#studentTable").empty();
+        
+            $.getJSON('/directory', function(data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $("#studentTable").append(
+                        "<tr>" +
+                            "<td>" + data[i].name + "</td>" + 
+                            "<td>" + data[i].grade + "</td>" +
+                            "<td>" + data[i].birthday + "</td>" +
+                            "<td>" + data[i].location + "</td>" +
+                        "</tr>"
+                    );
+                }
+            });
         });
 
         /* Allows the dropdown menus to be triggerable. */
@@ -67,17 +135,53 @@
     /* ------------------- JAVASCRIPT FOR BIRTHDAYS TAB ------------------- */
 
     /* Get current month and display it within the birthdays tab */
-        var currDate = (new Date).getMonth();
+        const currDate = (new Date).getMonth();
         $("#currMonth").text(convertMonth(currDate));
+
+        const monthAbv = convertMonth(currDate).substring(0, 3);
+
+        $("#birthdayTable").empty();
+
+        $.getJSON('/birthday/' + monthAbv, function(data) {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                $("#birthdayTable").append(
+                    "<tr>" +
+                        "<td>" + data[i].name + "</td>" + 
+                        "<td>" + data[i].grade + "</td>" +
+                        "<td>" + data[i].birthday + "</td>" +
+                        "<td>" + data[i].location + "</td>" +
+                    "</tr>"
+                );
+            }
+        });
 
     /* Change months according to what navigation button was pressed */
         $("#lastMonth").on("click", function(){
             var selectedMonth = $("#currMonth").text();
             var finalMonthValue = getCurrMonth(selectedMonth) - 1;
+            
             if (finalMonthValue < 0) {
                 finalMonthValue = 11;
             }
             $("#currMonth").text(convertMonth(finalMonthValue));
+            
+            const monthAbv = convertMonth(finalMonthValue).substring(0, 3);
+            $("#birthdayTable").empty();
+
+            $.getJSON('/birthday/' + monthAbv, function(data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $("#birthdayTable").append(
+                        "<tr>" +
+                            "<td>" + data[i].name + "</td>" + 
+                            "<td>" + data[i].grade + "</td>" +
+                            "<td>" + data[i].birthday + "</td>" +
+                            "<td>" + data[i].location + "</td>" +
+                        "</tr>"
+                    );
+                }
+            });
         });
         $("#nextMonth").on("click", function(){
             var selectedMonth = $("#currMonth").text();
@@ -86,6 +190,23 @@
                 finalMonthValue = 0;
             }
             $("#currMonth").text(convertMonth(finalMonthValue));
+            
+            const monthAbv = convertMonth(finalMonthValue).substring(0, 3);
+            $("#birthdayTable").empty();
+
+            $.getJSON('/birthday/' + monthAbv, function(data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $("#birthdayTable").append(
+                        "<tr>" +
+                            "<td>" + data[i].name + "</td>" + 
+                            "<td>" + data[i].grade + "</td>" +
+                            "<td>" + data[i].birthday + "</td>" +
+                            "<td>" + data[i].location + "</td>" +
+                        "</tr>"
+                    );
+                }
+            });
         });
 
     /* Add Student Modal trigger */
