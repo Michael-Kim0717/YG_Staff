@@ -7,6 +7,15 @@ th {
     text-align: center;
 }
 
+td {
+    text-align: center;
+}
+
+td button {
+    display: block;
+    margin: 0 auto;
+}
+
 /* Home */
 #firebaseui-auth-container {
     margin: 50px;
@@ -27,6 +36,12 @@ th {
 
     .modal-content input {
         margin-right: 30px;
+    }
+
+    /* Edit Student Modal */
+    .esb {
+        display: block;
+        margin: 0 auto;
     }
 
     /* Dropdown Menu */

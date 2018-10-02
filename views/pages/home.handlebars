@@ -41,6 +41,37 @@
                     </div>
                 </div>
             </div>
+
+            {{!-- Edit Student Modal Details --}}
+            <div id="editStudentModal" class="modal">
+                <div class="modal-content row">
+                    <h4 class="center"> Edit Student </h4>
+                    
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" id="eSName">
+                        <label for="aSName"> Name </label>
+                    </div>
+
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" class='gradepicker' data-target='aSGradePicker' id='eSGrade'>
+                        <label for="aSGrade"> Grade </label>
+                    </div>
+
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" class="datepicker" id="eSBirthday">
+                        <label for="aSBirthday"> Birthday </label>
+                    </div>
+
+                    <div class="input-field col s10 offset-s1">
+                        <input type="text" class="autocomplete" id="eSLocation">
+                        <label for="aSLocation"> Location </label>
+                    </div>
+
+                    <div class="col s6 offset-s3">
+                        <button class="btn esb" id="editStudentButton"> Edit Student </button>
+                    </div>
+                </div>
+            </div>
                     
             <a class='sort-trigger btn' href='#' data-target='sortList' id='sortDD'> Sort By </a>
 
@@ -86,6 +117,8 @@
                     <th> Grade </th>
                     <th> Birthday </th>
                     <th> Location </th>
+                    <th> Edit </th>
+                    <th> Delete </th>
                 </thead>
                 <tbody id="studentTable">
 

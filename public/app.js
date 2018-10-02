@@ -14,6 +14,8 @@
                         "<td>" + data[i].grade + "</td>" +
                         "<td>" + data[i].birthday + "</td>" +
                         "<td>" + data[i].location + "</td>" +
+                        "<td> <button class='btn modal-trigger editStudent' data-value=" + "edit" + data[i]._id + " data-target='editStudentModal'> EDIT </button> </td>" +
+                        "<td> <button class='btn deleteStudent' data-value=" + "delete" + data[i]._id + " id='delete'> DELETE </button> </td>" +
                     "</tr>"
                 );
             }
@@ -39,6 +41,8 @@
                             "<td>" + data[i].grade + "</td>" +
                             "<td>" + data[i].birthday + "</td>" +
                             "<td>" + data[i].location + "</td>" +
+                            "<td> <button class='btn modal-trigger editStudent' data-value=" + "edit" + data[i]._id + " data-target='editStudentModal'> EDIT </button> </td>" +
+                            "<td> <button class='btn deleteStudent' data-value=" + "delete" + data[i]._id + " id='delete'> DELETE </button> </td>" +
                         "</tr>"
                     );
                 }
@@ -49,6 +53,7 @@
         $(".aSGradeV").on("click", function(){
             console.log($(this).attr("data-grade"));
             $("#aSGrade").val($(this).attr("data-grade"));
+            $("#eSGrade").val($(this).attr("data-grade"));
         });
 
         $('input.autocomplete').autocomplete({
@@ -122,6 +127,61 @@
                             "<td>" + data[i].grade + "</td>" +
                             "<td>" + data[i].birthday + "</td>" +
                             "<td>" + data[i].location + "</td>" +
+                            "<td> <button class='btn modal-trigger editStudent' data-value=" + "edit" + data[i]._id + " data-target='editStudentModal'> EDIT </button> </td>" +
+                            "<td> <button class='btn deleteStudent' data-value=" + "delete" + data[i]._id + " id='delete'> DELETE </button> </td>" +
+                        "</tr>"
+                    );
+                }
+            });
+        });
+
+        $(document).on("click", ".editStudent", function(event){
+            event.preventDefault();
+
+            const id = $(this).attr("data-value").substring(4);
+            console.log(id);
+
+            /* $.getJSON('/edit/students/' + id, function(data) {
+                console.log(data);
+                
+                $("#eSName").val(data[0].name);
+                $("#eSGrade").val(data[0].grade);
+                $("#eSBirthday").val(data[0].birthday);
+                $("#eSLocation").val(data[0].location);
+            }); */
+
+            /* $.ajax({
+                method: "GET",
+                url: "/edit/students/" + id
+            })
+            .then(function(data){
+                console.log(data);
+            }); */
+        });
+
+        $(document).on("click", ".deleteStudent", function(event){
+            event.preventDefault();
+
+            const id = $(this).attr("data-value").substring(6);
+
+            $.ajax({
+                method: "PUT",
+                url: "/delete/students/" + id
+            });
+            
+            $("#studentTable").empty();
+
+            $.getJSON('/directory', function(data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    $("#studentTable").append(
+                        "<tr>" +
+                            "<td>" + data[i].name + "</td>" + 
+                            "<td>" + data[i].grade + "</td>" +
+                            "<td>" + data[i].birthday + "</td>" +
+                            "<td>" + data[i].location + "</td>" +
+                            "<td> <button class='btn modal-trigger editStudent' data-value=" + "edit" + data[i]._id + " data-target='editStudentModal'> EDIT </button> </td>" +
+                            "<td> <button class='btn deleteStudent' data-value=" + "delete" + data[i]._id + " id='delete'> DELETE </button> </td>" +
                         "</tr>"
                     );
                 }

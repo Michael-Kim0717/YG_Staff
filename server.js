@@ -88,6 +88,30 @@ app.post('/all/students', function(request, response){
         });
 });
 
+// When the user clicks the Edit Student button
+// Add the student information into the modal
+app.get('/edit/students/:id', function(request, response){
+    db.Student.find({ _id : request.params.id })
+        .then(function(dbStudent){
+            console.log(dbStudent);
+        })
+        .catch(function(error){
+            response.json(error);
+        })
+});
+
+// When the user clicks the Delete Student button
+// Delete the student from the database
+app.put('/delete/students/:id', function(request, response){
+    db.Student.deleteOne({ _id : request.params.id })
+        .then(function(dbStudent){
+            console.log(dbStudent);
+        })
+        .catch(function(error){
+            response.json(error);
+        })
+});
+
 // ------------------------------------------------------------------------
 
 // Setting up a base port to be used.
