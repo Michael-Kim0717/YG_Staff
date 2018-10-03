@@ -115,6 +115,6 @@ app.put('/delete/students/:id', function(request, response){
 // ------------------------------------------------------------------------
 
 // Setting up a base port to be used.
-app.listen(PORT,()=>{
+app.listen(PORT || process.env.PORT,()=>{
     console.log(`Server listen at door:${PORT}`);
 });

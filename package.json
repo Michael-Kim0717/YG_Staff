@@ -1,0 +1,30 @@
+{
+  "name": "ygstaff",
+  "version": "1.0.0",
+  "description": "A page where Bethany Youth Group staff can view information and accomplish tasks in a easy to use portal",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express-handlebars": "^3.0.0",
+    "express": "^4.16.3",
+    "mongojs": "^2.6.0",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael-Kim0717/YG_Staff.git"
+  },
+  "author": "Michael Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michael-Kim0717/YG_Staff/issues"
+  },
+  "homepage": "https://github.com/Michael-Kim0717/YG_Staff#readme"
+}
