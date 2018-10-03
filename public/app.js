@@ -4,6 +4,19 @@
     $(document).ready(function(){
         $('.tabs').tabs();
 
+        var uid = null;
+        firebase.auth().onAuthStateChanged(function(user){
+            if (user){
+                uid = user.uid;
+                console.log(uid);
+                console.log(window.location.href);
+            }
+            else {
+                uid = null;
+                window.location.replace("/");
+            }
+        })
+
     /* Populating all the data within the directory and birthdays with an AJAX call */
         $.getJSON('/directory', function(data) {
             console.log(data);

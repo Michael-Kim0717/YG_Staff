@@ -17,8 +17,14 @@ td button {
 }
 
 /* Home */
-#firebaseui-auth-container {
-    margin: 50px;
+#login-card {
+    margin: 50px auto;
+    max-width: 50%;
+}
+
+#login-button {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Directory */
