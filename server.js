@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 clients(app);
 
 // Setting a base port to be used.
-const PORT = 9001;
+const PORT = process.env.PORT || 9001;
 
 // ------------------------POST AND GET REQUESTS---------------------------
 
@@ -116,6 +116,6 @@ app.put('/delete/students/:id', function(request, response){
 // ------------------------------------------------------------------------
 
 // Setting up a base port to be used.
-app.listen(process.env.PORT || PORT, ()=>{
-    console.log(`Server listen at door:${PORT}`);
+app.listen(PORT, ()=>{
+    console.log("Server started at PORT: " + PORT);
 });

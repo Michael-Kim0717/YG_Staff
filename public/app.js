@@ -4,36 +4,40 @@
     $(document).ready(function(){
         $('.tabs').tabs();
 
-        var uid = null;
+        let uid = null;
+    /* If the user has logged in, redirect to the home page if not on the home page */
         firebase.auth().onAuthStateChanged(function(user){
             if (user){
                 uid = user.uid;
-                console.log(uid);
-                console.log(window.location.href);
+                if (window.location.pathname != "/home"){
+                    window.location.replace("/home");
+                }
+    /* Populating all the data within the directory and birthdays with an AJAX call */
+                $.getJSON('/directory', function(data) {
+                    console.log(data);
+                    for (var i = 0; i < data.length; i++) {
+                        $("#studentTable").append(
+                            "<tr>" +
+                                "<td>" + data[i].name + "</td>" + 
+                                "<td>" + data[i].grade + "</td>" +
+                                "<td>" + data[i].birthday + "</td>" +
+                                "<td>" + data[i].location + "</td>" +
+                                "<td> <button class='btn modal-trigger editStudent' data-value=" + "edit" + data[i]._id + " data-target='editStudentModal'> EDIT </button> </td>" +
+                                "<td> <button class='btn deleteStudent' data-value=" + "delete" + data[i]._id + " id='delete'> DELETE </button> </td>" +
+                            "</tr>"
+                        );
+                    }
+                    $(".preloader-wrapper").css("visibility", "hidden");
+                });
             }
+    /* Else if the user has not logged in, redirect user to the login page */
             else {
                 uid = null;
-                window.location.replace("/");
+                if (window.location.pathname != "/"){
+                    window.location.replace("/");
+                }
             }
         })
-
-    /* Populating all the data within the directory and birthdays with an AJAX call */
-        $.getJSON('/directory', function(data) {
-            console.log(data);
-            for (var i = 0; i < data.length; i++) {
-                $("#studentTable").append(
-                    "<tr>" +
-                        "<td>" + data[i].name + "</td>" + 
-                        "<td>" + data[i].grade + "</td>" +
-                        "<td>" + data[i].birthday + "</td>" +
-                        "<td>" + data[i].location + "</td>" +
-                        "<td> <button class='btn modal-trigger editStudent' data-value=" + "edit" + data[i]._id + " data-target='editStudentModal'> EDIT </button> </td>" +
-                        "<td> <button class='btn deleteStudent' data-value=" + "delete" + data[i]._id + " id='delete'> DELETE </button> </td>" +
-                    "</tr>"
-                );
-            }
-            $(".preloader-wrapper").css("visibility", "hidden");
-        });
 
     /* ------------------- JAVASCRIPT FOR DIRECTORY TAB ------------------- */
     /* Allows the dropdown menus to be triggerable. */
