@@ -1,8 +1,8 @@
 # YG_Staff
 
-![Home Page](https://user-images.githubusercontent.com/8729300/46427511-9d29cf80-c70f-11e8-9842-165428a1a2f8.png)
-
 https://bygstaff.herokuapp.com/
+
+![Home Page](https://user-images.githubusercontent.com/8729300/46427511-9d29cf80-c70f-11e8-9842-165428a1a2f8.png)
 
 For a church's Youth Group staff members, certain tasks require a handful of thorough searching to find results. Directories are stored in spreadsheets and a list of birthdays must be curated every month by sifting through each student one by one. This website will gain more functionality in the future, but currently makes each of the above tasks much easier.
 
@@ -16,7 +16,7 @@ For a church's Youth Group staff members, certain tasks require a handful of tho
   JAVASCRIPT
   JQUERY
   HANDLEBARS
-  MATERIALIZE CSS / CSS
+  HTML / CSS / MATERIALIZE CSS
   MONGODB
   
   Node Packages :
