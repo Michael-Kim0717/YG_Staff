@@ -38,6 +38,10 @@ td button {
         margin-right: 30px;
     }
 
+    .modal-content h6 {
+        text-align: center;
+    }
+
     /* Edit Student Modal */
     .esb {
         display: block;
