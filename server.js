@@ -7,6 +7,7 @@ const
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     mongojs = require('mongojs');
+require('dotenv').config();
 
 // If deployed, use the deployed database.
 // Otherwise use the local BYGStaff database.
@@ -115,6 +116,6 @@ app.put('/delete/students/:id', function(request, response){
 // ------------------------------------------------------------------------
 
 // Setting up a base port to be used.
-app.listen(PORT || process.env.PORT,()=>{
+app.listen(PORT || process.env.PORT, ()=>{
     console.log(`Server listen at door:${PORT}`);
 });
