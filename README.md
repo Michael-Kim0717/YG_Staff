@@ -11,12 +11,15 @@ For a church's Youth Group staff members, certain tasks require a handful of tho
 #### BUILT-WITH
 
 ```
+
   Languages and Database :
   
-  JAVASCRIPT
-  JQUERY
-  HANDLEBARS
-  HTML / CSS / MATERIALIZE CSS
+  Javascript
+  JQuery
+  Handlebars
+  HTML / CSS / MaterializeCSS
+  Node
+  Express
   MONGODB
   
   Node Packages :
@@ -27,6 +30,7 @@ For a church's Youth Group staff members, certain tasks require a handful of tho
   express-handlebars : a Handlebars view engine for Express
   mongoose : a MongoDB object modeling tool designed to work in an asynchronous environment
   path : an exact copy of the NodeJS ’path’ module
+  
 ```
 
 ##### SAMPLE DATA
@@ -35,10 +39,10 @@ All information of students is recorded with the following and each field contai
 
 ```json
 studentObject {
-  name : NAME,
-  grade : GRADE,
-  birthday : BIRTHDAY,
-  location : LOCATION
+  "name" : "NAME",
+  "grade" : "GRADE",
+  "birthday" : "BIRTHDAY",
+  "location" : "LOCATION"
 }
 ```
 
@@ -58,5 +62,5 @@ On the birthdays page, rather than having to search through the directory lists 
 
 ### TODO / BUGS
 
-* Code Cleanup
-* Edit Button Functionality
+TODO : Code Cleanup
+BUG : Edit Button Functionality
